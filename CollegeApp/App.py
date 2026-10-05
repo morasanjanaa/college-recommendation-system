@@ -1,4 +1,21 @@
 import streamlit as st
+import streamlit.components.v1 as components
+
+# Google Analytics
+GA_ID = "G-QXT3FWXQJE"
+
+google_analytics = f"""
+<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){{dataLayer.push(arguments);}}
+gtag('js', new Date());
+gtag('config', '{GA_ID}');
+</script>
+"""
+
+components.html(google_analytics, height=0)
+import streamlit as st
 import pandas as pd
 import pickle
 import matplotlib.pyplot as plt
